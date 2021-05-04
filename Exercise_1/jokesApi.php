@@ -17,7 +17,7 @@
             $jokes = array("joke1","banana splits","joke3","joke4","joke5","joke6","joke7");
 
             $rand_joke = array_rand($jokes, 2);
-            echo $jokes[$rand_joke[0]] . "\n";
+          /*   echo $jokes[$rand_joke[0]] . "\n"; */
 /*             echo $jokes[$rand_joke[1]] . "\n";
             echo $jokes[$rand_joke[2]] . "\n"; */
             return $rand_joke;
@@ -26,13 +26,15 @@
             foreach ($jokes as $joke=>$value) {
                 $url = 'http://api.serri.codefactory.live/' . $joke.$value;
                 $result = curl_get($url);
-                $smile = json_decode($result); //it turns the json into an object
+                $smile = json_decode($result);
+                $jocke = $smile->joke;
+                //it turns the json into an object
                ; //convert fahrenheit into celsius
                 echo "
                     <div class='card text-center text-white bg-primary' style='width: 18rem; font-size: 1.2rem'>
                         <p class='card-title'> Joke </p>
                         <div class='card-body'>
-                            <p class='card-text'>{$rand_joke}</p>
+                            <p class='card-text'>{$jocke}</p>
                         </div>
                     </div>";
             }
