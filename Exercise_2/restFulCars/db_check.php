@@ -5,7 +5,9 @@ require_once("conn.php");
 
 // This query will check do we have car_id in the table car
 // for the provided $id
-$sql = "SELECT * FROM car WHERE car_id=$id";
+$sql = "SELECT * FROM car";
+
+// $sql = "SELECT * FROM car WHERE car_id=$id";
 
 // Perform a query on the DB
 $result = mysqli_query($conn, $sql);
@@ -16,6 +18,7 @@ $row = mysqli_fetch_assoc($result);
 // Store values into the variables
 $name = $row['name'];
 $price = $row['price'];
+$image = $row['image'];
 
 // Close the DB connection
 mysqli_close($conn);
