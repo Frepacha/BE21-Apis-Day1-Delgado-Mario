@@ -1,10 +1,10 @@
 <?php
 
-// function build_query_string(array $params) {
-//     $query_string = http_build_query($params);
-//     //generates URL-encoded for a query string
-//     return $query_string;
-// } 
+function build_query_string(array $params) {
+    $query_string = http_build_query($params);
+    //generates URL-encoded for a query string
+    return $query_string;
+} 
 
 function curl_get($url) {
     $client = curl_init($url);

@@ -7,18 +7,29 @@ require_once("conn.php");
 // for the provided $id
 $sql = "SELECT * FROM car";
 
+
+// $sql = "SELECT * FROM car WHERE price > 20000";
+
+
+//nur wenn wir mit der ID arbeiten
 // $sql = "SELECT * FROM car WHERE car_id=$id";
 
 // Perform a query on the DB
 $result = mysqli_query($conn, $sql);
 
-// Fetch the query into $row
-$row = mysqli_fetch_assoc($result);
 
-// Store values into the variables
-$name = $row['name'];
-$price = $row['price'];
-$image = $row['image'];
+
+    // put all results in the rows array
+    $rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+
+// // Fetch the query into $row
+// $row = mysqli_fetch_assoc($result);
+
+// // Store values into the variables
+// $name = $row['name'];
+// $price = $row['price'];
+// $image = $row['image'];
 
 // Close the DB connection
 mysqli_close($conn);
