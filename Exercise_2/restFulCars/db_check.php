@@ -5,7 +5,12 @@ require_once("conn.php");
 
 // This query will check do we have car_id in the table car
 // for the provided $id
-$sql = "SELECT * FROM car";
+if(isset($_GET["id"])){
+    $id = ($_GET["id"] == "all") ? "" : " WHERE car_id= " .$_GET["id"];
+}else {
+    $id = "";
+}
+$sql = "SELECT * FROM car $id";
 
 
 // $sql = "SELECT * FROM car WHERE price > 20000";
@@ -20,7 +25,12 @@ $result = mysqli_query($conn, $sql);
 
 
     // put all results in the rows array
-    $rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
+    if(mysqli_num_rows($result) == 1){
+        $rows = mysqli_fetch_assoc($result);
+    }else {
+        $rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
+    }
+    
 
 
 // // Fetch the query into $row
