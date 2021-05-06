@@ -4,7 +4,7 @@
 
 
 
-    $url = 'http://localhost/week12/Day2/BE21-Apis-Day1-Delgado-Mario/Exercise_2/restFulCars/webservice.php';
+    $url = 'http://hartleb.codefactory.live/Exercise_2/restFulCars/webservice.php'; //http://localhost/week12/Day2/BE21-Apis-Day1-Delgado-Mario/Exercise_2/restFulCars/webservice.php
     $result = curl_get($url);
     #var_dump($result);
     $carsJ = json_decode($result); //it turns the json into an object

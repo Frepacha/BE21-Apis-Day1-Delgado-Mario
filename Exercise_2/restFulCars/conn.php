@@ -1,9 +1,9 @@
 <?php
 // DB connection parameters
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "cars";
+$servername = "173.212.235.205";//shared IP Adresse localhost
+$username = "hartlebc_yoshi";//root
+$password = "Mariosan2021";//""
+$dbname = "hartlebc_cars";//cars
 
 // Create the DB connection
 $conn = mysqli_connect($servername, $username, $password, $dbname);
